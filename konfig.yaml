@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://unpkg.com/konfig-lib@latest/konfig-yaml.schema.json
+
+outputDirectory: /tmp/safehealth-sdks-out
+specInputPath: openapi.json
+specPath: openapi-fixed.json
+generators:
+  swift:
+    version: 1.0.0
+    projectName: Safehealth
+    podAuthors: safehealth.me
+    outputDirectory: swift
+    git:
+      userId: konfig-dev
+      repoId: safehealth-sdks/tree/main/swift
