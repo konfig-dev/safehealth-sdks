@@ -5,6 +5,9 @@
     "description": "Send push notifications to a user's device\n\n[Health Check UI](http://localhost:8012/healthchecks-ui)",
     "version": "0.3.1-9ffa049"
   },
+  "servers": [
+    { "url": "https://api.dev-1.sf.safecdx.io/v1beta/notification-push" }
+  ],
   "paths": {
     "/users/{userId}/devices": {
       "post": {

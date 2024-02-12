@@ -3,11 +3,6 @@
 outputDirectory: /tmp/safehealth-sdks-out
 specInputPath: openapi.json
 specPath: openapi-fixed.json
-fixConfig:
-  update:
-    $.:
-      servers:
-        - url: "http://127.0.0.1:4010"
 generators:
   swift:
     version: 1.0.0
