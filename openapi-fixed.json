@@ -383,8 +383,7 @@
           "channels": {
             "$ref": "#/components/schemas/AndroidChannels"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AndroidChannels": {
         "type": "object",
@@ -392,8 +391,7 @@
           "firebaseCloudMessaging": {
             "$ref": "#/components/schemas/AndroidFirebaseCloudMessaging"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AndroidFirebaseCloudMessaging": {
         "type": "object",
@@ -411,8 +409,7 @@
             "nullable": true,
             "writeOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AppleFirebaseCloudMessaging": {
         "type": "object",
@@ -430,8 +427,7 @@
             "nullable": true,
             "writeOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AppleIos": {
         "type": "object",
@@ -450,8 +446,7 @@
           "channels": {
             "$ref": "#/components/schemas/AppleIosChannels"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AppleIosChannels": {
         "type": "object",
@@ -462,8 +457,7 @@
           "firebaseCloudMessaging": {
             "$ref": "#/components/schemas/AppleFirebaseCloudMessaging"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "ApplePushNotificationServiceVoIp": {
         "type": "object",
@@ -477,8 +471,7 @@
             "nullable": true,
             "writeOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "AppleSimpleNotificationService": {
         "type": "object",
@@ -486,8 +479,7 @@
           "apnsVoip": {
             "$ref": "#/components/schemas/ApplePushNotificationServiceVoIp"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "BrowserName": {
         "enum": [
@@ -533,8 +525,7 @@
           "mobile": {
             "$ref": "#/components/schemas/Mobile"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "DeviceCreateRequest": {
         "type": "object",
@@ -542,8 +533,7 @@
           "device": {
             "$ref": "#/components/schemas/Device"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "DeviceCreateResponse": {
         "type": "object",
@@ -551,8 +541,7 @@
           "device": {
             "$ref": "#/components/schemas/Device"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "DeviceListResponse": {
         "type": "object",
@@ -564,8 +553,7 @@
             },
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "Mobile": {
         "type": "object",
@@ -579,8 +567,7 @@
           "android": {
             "$ref": "#/components/schemas/Android"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "MobileOperatingSystem": {
         "enum": [
@@ -635,8 +622,6 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": {
         }
       },
       "Severity": {
@@ -730,8 +715,7 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "ValidationFailure": {
         "type": "object",
@@ -759,13 +743,9 @@
           },
           "formattedMessagePlaceholderValues": {
             "type": "object",
-            "additionalProperties": {
-              "nullable": true
-            },
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "Web": {
         "type": "object",
@@ -783,8 +763,7 @@
           "defaults": {
             "$ref": "#/components/schemas/WebPushDefaults"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "WebChannels": {
         "type": "object",
@@ -792,8 +771,7 @@
           "firebaseCloudMessaging": {
             "$ref": "#/components/schemas/WebFirebaseCloudMessaging"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "WebFirebaseCloudMessaging": {
         "type": "object",
@@ -811,8 +789,7 @@
             "nullable": true,
             "writeOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "WebPushDefaults": {
         "type": "object",
@@ -820,8 +797,7 @@
           "channels": {
             "$ref": "#/components/schemas/WebChannels"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "DeviceList400Response": {
         "type": "string"
