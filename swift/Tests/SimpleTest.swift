@@ -17,8 +17,30 @@ class SimpleTest: XCTestCase {
 
     override func tearDownWithError() throws {}
 
+    func testDeviceDelete() async throws {
+        let userId = UUID().uuidString
+        let deviceId = UUID().uuidString
+        try await safehealth.device.delete(
+            userId: userId,
+            deviceId: deviceId
+        )
+    }
+
+    func testDeviceList() async throws {
+        let userId = UUID().uuidString
+        let page = 987
+        let limit = 987
+        let listResponse = try await safehealth.device.list(
+            userId: userId,
+            page: page,
+            limit: limit
+        )
+        print(listResponse)
+        XCTAssertNotNil(listResponse)
+    }
+
     func testUserDeviceCreate() async throws {
-        let id = "id_example"
+        let id = UUID().uuidString
         let createdAt = Date()
         let updatedAt = Date()
         let deviceId = "deviceId_example"
@@ -116,5 +138,14 @@ class SimpleTest: XCTestCase {
         )
         print(storeResponse)
         XCTAssertNotNil(storeResponse)
+    }
+
+    func testUserDeviceDelete() async throws {
+        let deviceToken = "deviceToken_example"
+        let deleteResponse = try await safehealth.userDevice.delete(
+            deviceToken: deviceToken
+        )
+        print(deleteResponse)
+        XCTAssertNotNil(deleteResponse)
     }
 }

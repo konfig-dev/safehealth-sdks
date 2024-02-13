@@ -70,9 +70,9 @@ let safehealthpush = SafehealthPushClient(
     // basePath: "https://api.dev-1.sf.safecdx.io/v1beta/notification-push"
 )
 
-let userId = "userId_example"
-let deviceId = "deviceId_example"
-let deleteResponse = safehealthpush.delete(
+let userId = UUID().uuidString
+let deviceId = UUID().uuidString
+let deleteResponse = try await safehealthpush.device.delete(
     userId: userId,
     deviceId: deviceId
 )
@@ -89,9 +89,9 @@ Deletes the identified device from the specified user&#39;s devices.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = "userId_example"
-let deviceId = "deviceId_example"
-let deleteResponse = safehealthpush.delete(
+let userId = UUID().uuidString
+let deviceId = UUID().uuidString
+let deleteResponse = try await safehealthpush.device.delete(
     userId: userId,
     deviceId: deviceId
 )
@@ -125,10 +125,10 @@ Retrieves a pageable list of devices associated with the specified user.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = "userId_example"
+let userId = UUID().uuidString
 let page = 987
 let limit = 987
-let listResponse = safehealthpush.list(
+let listResponse = try await safehealthpush.device.list(
     userId: userId,
     page: page,
     limit: limit
@@ -168,9 +168,9 @@ Stores a new device associated with the specified user. If a device with any mat
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = "userId_example"
+let userId = UUID().uuidString
 let device = Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))
-let storeResponse = safehealthpush.store(
+let storeResponse = try await safehealthpush.device.store(
     userId: userId,
     device: device
 )
@@ -223,7 +223,7 @@ let tenantId = "tenantId_example"
 let userUUID = "userUUID_example"
 let nationalHealthId = "nationalHealthId_example"
 let language = "language_example"
-let createResponse = safehealthpush.create(
+let createResponse = try await safehealthpush.userDevice.create(
     id: id,
     createdAt: createdAt,
     updatedAt: updatedAt,
@@ -318,7 +318,7 @@ Deletes UserDevice entity by device token.
 
 ```swift
 let deviceToken = "deviceToken_example"
-let deleteResponse = safehealthpush.delete(
+let deleteResponse = try await safehealthpush.userDevice.delete(
     deviceToken: deviceToken
 )
 ```
