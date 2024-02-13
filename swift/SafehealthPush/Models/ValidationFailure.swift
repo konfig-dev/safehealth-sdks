@@ -18,9 +18,9 @@ public struct ValidationFailure: Codable, JSONEncodable, Hashable {
     public var customState: AnyCodable?
     public var severity: Severity?
     public var errorCode: String?
-    public var formattedMessagePlaceholderValues: AnyCodable?
+    public var formattedMessagePlaceholderValues: [String: AnyCodable]?
 
-    public init(propertyName: String? = nil, errorMessage: String? = nil, attemptedValue: AnyCodable? = nil, customState: AnyCodable? = nil, severity: Severity? = nil, errorCode: String? = nil, formattedMessagePlaceholderValues: AnyCodable? = nil) {
+    public init(propertyName: String? = nil, errorMessage: String? = nil, attemptedValue: AnyCodable? = nil, customState: AnyCodable? = nil, severity: Severity? = nil, errorCode: String? = nil, formattedMessagePlaceholderValues: [String: AnyCodable]? = nil) {
         self.propertyName = propertyName
         self.errorMessage = errorMessage
         self.attemptedValue = attemptedValue

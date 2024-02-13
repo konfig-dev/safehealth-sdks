@@ -34,6 +34,21 @@ public struct ProblemDetails: Codable, JSONEncodable, Hashable {
         case instance
     }
 
+    public var additionalProperties: [String: AnyCodable] = [:]
+
+    public subscript(key: String) -> AnyCodable? {
+        get {
+            if let value = additionalProperties[key] {
+                return value
+            }
+            return nil
+        }
+
+        set {
+            additionalProperties[key] = newValue
+        }
+    }
+
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
@@ -43,6 +58,28 @@ public struct ProblemDetails: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(detail, forKey: .detail)
         try container.encodeIfPresent(instance, forKey: .instance)
+        var additionalPropertiesContainer = encoder.container(keyedBy: String.self)
+        try additionalPropertiesContainer.encodeMap(additionalProperties)
+    }
+
+    // Decodable protocol methods
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        title = try container.decodeIfPresent(String.self, forKey: .title)
+        type = try container.decodeIfPresent(String.self, forKey: .type)
+        status = try container.decodeIfPresent(Int.self, forKey: .status)
+        detail = try container.decodeIfPresent(String.self, forKey: .detail)
+        instance = try container.decodeIfPresent(String.self, forKey: .instance)
+        var nonAdditionalPropertyKeys = Set<String>()
+        nonAdditionalPropertyKeys.insert("title")
+        nonAdditionalPropertyKeys.insert("type")
+        nonAdditionalPropertyKeys.insert("status")
+        nonAdditionalPropertyKeys.insert("detail")
+        nonAdditionalPropertyKeys.insert("instance")
+        let additionalPropertiesContainer = try decoder.container(keyedBy: String.self)
+        additionalProperties = try additionalPropertiesContainer.decodeMap(AnyCodable.self, excludedKeys: nonAdditionalPropertyKeys)
     }
 }
 

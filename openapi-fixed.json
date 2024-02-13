@@ -62,17 +62,17 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeviceCreateResponse"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceCreateResponse"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceCreateResponse"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceCreateResponse"
                 }
@@ -82,17 +82,17 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeviceStoreResponse"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceStoreResponse"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceStoreResponse"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceStoreResponse"
                 }
@@ -142,17 +142,17 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeviceListResponse"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceListResponse"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceListResponse"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceListResponse"
                 }
@@ -162,17 +162,17 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeviceList400Response"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceList400Response"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceList400Response"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/DeviceList400Response"
                 }
@@ -182,17 +182,17 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -238,17 +238,17 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -289,17 +289,17 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDevice"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDevice"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDevice"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDevice"
                 }
@@ -309,17 +309,17 @@
           "401": {
             "description": "Unauthorized",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -351,17 +351,17 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDevice"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDevice"
                 }
               },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDevice"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDevice"
                 }
@@ -622,6 +622,8 @@
             "type": "string",
             "nullable": true
           }
+        },
+        "additionalProperties": {
         }
       },
       "Severity": {
@@ -743,6 +745,9 @@
           },
           "formattedMessagePlaceholderValues": {
             "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
             "nullable": true
           }
         }

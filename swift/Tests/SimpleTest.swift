@@ -1,19 +1,19 @@
-@testable import Safehealth
+@testable import SafehealthPush
 
 import XCTest
 
 
 class SimpleTest: XCTestCase {
-    var safehealth: SafehealthClient!
+    var safehealth: SafehealthPushClient!
 
     override func setUpWithError() throws {
-        self.safehealth = SafehealthClient(
+        self.safehealth = SafehealthPushClient(
             identityAccessToken: "IDENTITY_ACCESS_TOKEN",
             safeAccount: "SAFE_ACCOUNT",
             safeTenant: "SAFE_TENANT",
             basePath: "http://127.0.0.1:4010"
         )
-    }
+}
 
     override func tearDownWithError() throws {}
 

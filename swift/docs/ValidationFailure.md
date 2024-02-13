@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **customState** | [**AnyCodable**](.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 
 **errorCode** | **String** |  | [optional] 
-**formattedMessagePlaceholderValues** | [**AnyCodable**](.md) |  | [optional] 
+**formattedMessagePlaceholderValues** | [String: AnyCodable] |  | [optional] 
 
 [[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
 
