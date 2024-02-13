@@ -12,14 +12,14 @@ import AnyCodable
 
 public struct Device: Codable, JSONEncodable, Hashable {
 
-    public var id: UUID?
+    public var id: String?
     public var createdAt: Date?
     public var updatedAt: Date?
     public var platform: Platform?
     public var web: Web?
     public var mobile: Mobile?
 
-    public init(id: UUID? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, platform: Platform? = nil, web: Web? = nil, mobile: Mobile? = nil) {
+    public init(id: String? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, platform: Platform? = nil, web: Web? = nil, mobile: Mobile? = nil) {
         self.id = id
         self.createdAt = createdAt
         self.updatedAt = updatedAt

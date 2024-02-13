@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **delete**
 ```swift
-    open class func delete(userId: UUID, deviceId: UUID, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func delete(userId: String, deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Deletes the identified device from the specified user's devices.
@@ -20,8 +20,8 @@ Deletes the identified device from the specified user's devices.
 ```swift
 import Safehealth
 
-let userId = 987 // UUID | Identifies the user to whom the device is associated.
-let deviceId = 987 // UUID | Identifies the device to be deleted.
+let userId = "userId_example" // String | Identifies the user to whom the device is associated.
+let deviceId = "deviceId_example" // String | Identifies the device to be deleted.
 
 // Deletes the identified device from the specified user's devices.
 DeviceAPI.delete(userId: userId, deviceId: deviceId) { (response, error) in
@@ -40,8 +40,8 @@ DeviceAPI.delete(userId: userId, deviceId: deviceId) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **UUID** | Identifies the user to whom the device is associated. | 
- **deviceId** | **UUID** | Identifies the device to be deleted. | 
+ **userId** | **String** | Identifies the user to whom the device is associated. | 
+ **deviceId** | **String** | Identifies the device to be deleted. | 
 
 ### Return type
 
@@ -60,7 +60,7 @@ Void (empty response body)
 
 # **list**
 ```swift
-    open class func list(userId: UUID, page: Int? = nil, limit: Int? = nil, completion: @escaping (_ data: DeviceListResponse?, _ error: Error?) -> Void)
+    open class func list(userId: String, page: Int? = nil, limit: Int? = nil, completion: @escaping (_ data: DeviceListResponse?, _ error: Error?) -> Void)
 ```
 
 Retrieves a pageable list of devices associated with the specified user.
@@ -69,7 +69,7 @@ Retrieves a pageable list of devices associated with the specified user.
 ```swift
 import Safehealth
 
-let userId = 987 // UUID | Identifies the user for whom to retrieve devices.
+let userId = "userId_example" // String | Identifies the user for whom to retrieve devices.
 let page = 987 // Int |  (optional)
 let limit = 987 // Int |  (optional)
 
@@ -90,7 +90,7 @@ DeviceAPI.list(userId: userId, page: page, limit: limit) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **UUID** | Identifies the user for whom to retrieve devices. | 
+ **userId** | **String** | Identifies the user for whom to retrieve devices. | 
  **page** | **Int** |  | [optional] 
  **limit** | **Int** |  | [optional] 
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 # **store**
 ```swift
-    open class func store(userId: UUID, deviceCreateRequest: DeviceCreateRequest? = nil, completion: @escaping (_ data: DeviceCreateResponse?, _ error: Error?) -> Void)
+    open class func store(userId: String, deviceCreateRequest: DeviceCreateRequest? = nil, completion: @escaping (_ data: DeviceCreateResponse?, _ error: Error?) -> Void)
 ```
 
 Stores a new device associated with the specified user. If a device with any matching token(s) already exists for that user, it will be removed.
@@ -120,8 +120,8 @@ Stores a new device associated with the specified user. If a device with any mat
 ```swift
 import Safehealth
 
-let userId = 987 // UUID | Identifies the user to whom this device will be associated.
-let deviceCreateRequest = DeviceCreateRequest(device: Device(id: 123, createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))) // DeviceCreateRequest | Carries all device tokens and information required to deliver notifications to the device. (optional)
+let userId = "userId_example" // String | Identifies the user to whom this device will be associated.
+let deviceCreateRequest = DeviceCreateRequest(device: Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))) // DeviceCreateRequest | Carries all device tokens and information required to deliver notifications to the device. (optional)
 
 // Stores a new device associated with the specified user. If a device with any matching token(s) already exists for that user, it will be removed.
 DeviceAPI.store(userId: userId, deviceCreateRequest: deviceCreateRequest) { (response, error) in
@@ -140,7 +140,7 @@ DeviceAPI.store(userId: userId, deviceCreateRequest: deviceCreateRequest) { (res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **UUID** | Identifies the user to whom this device will be associated. | 
+ **userId** | **String** | Identifies the user to whom this device will be associated. | 
  **deviceCreateRequest** | [**DeviceCreateRequest**](DeviceCreateRequest.md) | Carries all device tokens and information required to deliver notifications to the device. | [optional] 
 
 ### Return type

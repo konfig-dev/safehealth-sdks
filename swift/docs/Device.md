@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **UUID** |  | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **createdAt** | **Date** |  | [optional] [readonly] 
 **updatedAt** | **Date** |  | [optional] [readonly] 
 **platform** | [**Platform**](Platform.md) |  | [optional] 

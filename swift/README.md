@@ -70,8 +70,8 @@ let safehealth = SafehealthClient(
     // basePath: "https://api.dev-1.sf.safecdx.io/v1beta/notification-push"
 )
 
-let userId = 987
-let deviceId = 987
+let userId = "userId_example"
+let deviceId = "deviceId_example"
 let deleteResponse = safehealth.delete(
     userId: userId,
     deviceId: deviceId
@@ -89,8 +89,8 @@ Deletes the identified device from the specified user&#39;s devices.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = 987
-let deviceId = 987
+let userId = "userId_example"
+let deviceId = "deviceId_example"
 let deleteResponse = safehealth.delete(
     userId: userId,
     deviceId: deviceId
@@ -99,12 +99,12 @@ let deleteResponse = safehealth.delete(
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### userId: `UUID`<a id="userid-uuid"></a>
+##### userId: `String`<a id="userid-string"></a>
 
 Identifies the user to whom the device is associated.
 
 
-##### deviceId: `UUID`<a id="deviceid-uuid"></a>
+##### deviceId: `String`<a id="deviceid-string"></a>
 
 Identifies the device to be deleted.
 
@@ -125,7 +125,7 @@ Retrieves a pageable list of devices associated with the specified user.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = 987
+let userId = "userId_example"
 let page = 987
 let limit = 987
 let listResponse = safehealth.list(
@@ -137,7 +137,7 @@ let listResponse = safehealth.list(
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### userId: `UUID`<a id="userid-uuid"></a>
+##### userId: `String`<a id="userid-string"></a>
 
 Identifies the user for whom to retrieve devices.
 
@@ -168,8 +168,8 @@ Stores a new device associated with the specified user. If a device with any mat
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```swift
-let userId = 987
-let device = Device(id: 123, createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))
+let userId = "userId_example"
+let device = Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))
 let storeResponse = safehealth.store(
     userId: userId,
     device: device
@@ -178,7 +178,7 @@ let storeResponse = safehealth.store(
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### userId: `UUID`<a id="userid-uuid"></a>
+##### userId: `String`<a id="userid-string"></a>
 
 Identifies the user to whom this device will be associated.
 

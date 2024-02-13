@@ -27,7 +27,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteSync(userId: UUID, deviceId: UUID, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func deleteSync(userId: String, deviceId: String, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
         return deleteWithRequestBuilder(userId: userId, deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
@@ -47,7 +47,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-    private class func deleteAsyncMappedParams(userId: UUID, deviceId: UUID) async throws -> Void {
+    private class func deleteAsyncMappedParams(userId: String, deviceId: String) async throws -> Void {
         return try await withCheckedThrowingContinuation { continuation in
             deleteWithRequestBuilder(userId: userId, deviceId: deviceId).execute { result in
                 switch result {
@@ -70,8 +70,8 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open class func delete(
-        userId: UUID,
-        deviceId: UUID
+        userId: String,
+        deviceId: String
     ) async throws -> Void {
         return try await withCheckedThrowingContinuation { continuation in
             deleteWithRequestBuilder(userId: userId, deviceId: deviceId).execute { result in
@@ -96,8 +96,8 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open func delete(
-        userId: UUID,
-        deviceId: UUID
+        userId: String,
+        deviceId: String
     ) async throws -> Void {
         return try await withCheckedThrowingContinuation { continuation in
             deleteWithRequestBuilder(userId: userId, deviceId: deviceId).execute { result in
@@ -130,8 +130,8 @@ open class DeviceAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func deleteWithRequestBuilder(
-            userId: UUID,
-            deviceId: UUID
+            userId: String,
+            deviceId: String
     ) -> RequestBuilder<Void> {
         let basePath = SafehealthAPI.basePath;
         var localVariablePath = "/users/{userId}/devices/{deviceId}"
@@ -182,8 +182,8 @@ open class DeviceAPI {
      - returns: RequestBuilder<Void> 
      */
     open func deleteWithRequestBuilder(
-            userId: UUID,
-            deviceId: UUID
+            userId: String,
+            deviceId: String
     ) -> RequestBuilder<Void> {
         let basePath = self.client.basePath;
         var localVariablePath = "/users/{userId}/devices/{deviceId}"
@@ -228,7 +228,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listSync(userId: UUID, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: DeviceListResponse?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listSync(userId: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: DeviceListResponse?, _ error: Error?) -> Void)) -> RequestTask {
         return listWithRequestBuilder(userId: userId, page: page, limit: limit).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -249,7 +249,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-    private class func listAsyncMappedParams(userId: UUID, page: Int? = nil, limit: Int? = nil) async throws -> DeviceListResponse {
+    private class func listAsyncMappedParams(userId: String, page: Int? = nil, limit: Int? = nil) async throws -> DeviceListResponse {
         return try await withCheckedThrowingContinuation { continuation in
             listWithRequestBuilder(userId: userId, page: page, limit: limit).execute { result in
                 switch result {
@@ -273,7 +273,7 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open class func list(
-        userId: UUID,
+        userId: String,
         page: Int? = nil, 
         limit: Int? = nil
     ) async throws -> DeviceListResponse {
@@ -301,7 +301,7 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open func list(
-        userId: UUID,
+        userId: String,
         page: Int? = nil, 
         limit: Int? = nil
     ) async throws -> DeviceListResponse {
@@ -337,7 +337,7 @@ open class DeviceAPI {
      - returns: RequestBuilder<DeviceListResponse> 
      */
     open class func listWithRequestBuilder(
-            userId: UUID,
+            userId: String,
             page: Int? = nil,
             limit: Int? = nil
     ) -> RequestBuilder<DeviceListResponse> {
@@ -392,7 +392,7 @@ open class DeviceAPI {
      - returns: RequestBuilder<DeviceListResponse> 
      */
     open func listWithRequestBuilder(
-            userId: UUID,
+            userId: String,
             page: Int? = nil,
             limit: Int? = nil
     ) -> RequestBuilder<DeviceListResponse> {
@@ -439,7 +439,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func storeSync(userId: UUID, deviceCreateRequest: DeviceCreateRequest? = nil, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: DeviceCreateResponse?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func storeSync(userId: String, deviceCreateRequest: DeviceCreateRequest? = nil, apiResponseQueue: DispatchQueue = SafehealthAPI.apiResponseQueue, completion: @escaping ((_ data: DeviceCreateResponse?, _ error: Error?) -> Void)) -> RequestTask {
         return storeWithRequestBuilder(userId: userId, deviceCreateRequest: deviceCreateRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -459,7 +459,7 @@ open class DeviceAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-    private class func storeAsyncMappedParams(userId: UUID, deviceCreateRequest: DeviceCreateRequest? = nil) async throws -> DeviceCreateResponse {
+    private class func storeAsyncMappedParams(userId: String, deviceCreateRequest: DeviceCreateRequest? = nil) async throws -> DeviceCreateResponse {
         return try await withCheckedThrowingContinuation { continuation in
             storeWithRequestBuilder(userId: userId, deviceCreateRequest: deviceCreateRequest).execute { result in
                 switch result {
@@ -482,7 +482,7 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open class func store(
-        userId: UUID,
+        userId: String,
         device: Device? = nil
     ) async throws -> DeviceCreateResponse {
         let deviceCreateRequest = DeviceCreateRequest(
@@ -511,7 +511,7 @@ open class DeviceAPI {
      */
     @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     open func store(
-        userId: UUID,
+        userId: String,
         device: Device? = nil
     ) async throws -> DeviceCreateResponse {
         let deviceCreateRequest = DeviceCreateRequest(
@@ -548,7 +548,7 @@ open class DeviceAPI {
      - returns: RequestBuilder<DeviceCreateResponse> 
      */
     open class func storeWithRequestBuilder(
-            userId: UUID,
+            userId: String,
             deviceCreateRequest: DeviceCreateRequest? = nil
     ) -> RequestBuilder<DeviceCreateResponse> {
         let basePath = SafehealthAPI.basePath;
@@ -597,7 +597,7 @@ open class DeviceAPI {
      - returns: RequestBuilder<DeviceCreateResponse> 
      */
     open func storeWithRequestBuilder(
-            userId: UUID,
+            userId: String,
             deviceCreateRequest: DeviceCreateRequest? = nil
     ) -> RequestBuilder<DeviceCreateResponse> {
         let basePath = self.client.basePath;
