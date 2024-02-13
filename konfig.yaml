@@ -8,9 +8,20 @@ readmeHeader:
   title: Safe Health
   url: https://www.safehealthsystems.com
 generators:
+  typescript:
+    version: 0.1.0
+    disabled: true
+    outputDirectory: typescript
+    git:
+      userId: konfig-dev
+      repoId: safehealth-sdks/tree/main/typescript
+    clientName: SafehealthPush
+    npmName: safehealth-push-typescript-sdk
+    removeDefaultConfigurationParameters: true
+    useSecurityKeyNameAsPropertyName: true
   swift:
-    version: 1.0.0
-    projectName: Safehealth
+    version: 0.1.0
+    projectName: SafehealthPush
     podAuthors: safehealth.me
     outputDirectory: swift
     git:
