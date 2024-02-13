@@ -181,14 +181,14 @@ open class UserDeviceAPI {
      Creates a UserDevice entity.
      - POST /device
      - API Key:
+       - type: apiKey Authorization 
+       - name: Identity Access Token
+     - API Key:
        - type: apiKey x-sf-account 
        - name: Safe Account
      - API Key:
        - type: apiKey x-sf-tenant 
        - name: Safe Tenant
-     - BASIC:
-       - type: http
-       - name: basic
      - parameter userDevice: (body) Represents a device used by the legacy push notification system. (optional)
      - returns: RequestBuilder<UserDevice> 
      */
@@ -209,9 +209,9 @@ open class UserDeviceAPI {
         var localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
         do {
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: SafehealthAPI.safe Account)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: SafehealthAPI.safe Tenant)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "", name: "", value: SafehealthAPI.basic)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "Authorization", value: SafehealthAPI.identityAccessToken)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: SafehealthAPI.safeAccount)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: SafehealthAPI.safeTenant)
             let localVariableRequestBuilder: RequestBuilder<UserDevice>.Type = SafehealthAPI.requestBuilderFactory.getBuilder()
             let URLString = localVariableUrlComponents?.string ?? localVariableURLString
             return localVariableRequestBuilder.init(method: "POST", URLString: URLString, parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
@@ -225,14 +225,14 @@ open class UserDeviceAPI {
      Creates a UserDevice entity.
      - POST /device
      - API Key:
+       - type: apiKey Authorization 
+       - name: Identity Access Token
+     - API Key:
        - type: apiKey x-sf-account 
        - name: Safe Account
      - API Key:
        - type: apiKey x-sf-tenant 
        - name: Safe Tenant
-     - BASIC:
-       - type: http
-       - name: basic
      - parameter userDevice: (body) Represents a device used by the legacy push notification system. (optional)
      - returns: RequestBuilder<UserDevice> 
      */
@@ -253,9 +253,9 @@ open class UserDeviceAPI {
         var localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
         do {
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: self.client.safe Account)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: self.client.safe Tenant)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "", name: "", value: self.client.basic)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "Authorization", value: self.client.identityAccessToken)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: self.client.safeAccount)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: self.client.safeTenant)
             let localVariableRequestBuilder: RequestBuilder<UserDevice>.Type = SafehealthAPI.requestBuilderFactory.getBuilder()
             let URLString = localVariableUrlComponents?.string ?? localVariableURLString
             return localVariableRequestBuilder.init(method: "POST", URLString: URLString, parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
@@ -359,14 +359,14 @@ open class UserDeviceAPI {
      Deletes UserDevice entity by device token.
      - DELETE /device
      - API Key:
+       - type: apiKey Authorization 
+       - name: Identity Access Token
+     - API Key:
        - type: apiKey x-sf-account 
        - name: Safe Account
      - API Key:
        - type: apiKey x-sf-tenant 
        - name: Safe Tenant
-     - BASIC:
-       - type: http
-       - name: basic
      - parameter deviceToken: (query) Identifying token passed when creating UserDevice. (optional)
      - returns: RequestBuilder<UserDevice> 
      */
@@ -390,9 +390,9 @@ open class UserDeviceAPI {
         var localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
         do {
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: SafehealthAPI.safe Account)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: SafehealthAPI.safe Tenant)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "", name: "", value: SafehealthAPI.basic)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "Authorization", value: SafehealthAPI.identityAccessToken)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: SafehealthAPI.safeAccount)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: SafehealthAPI.safeTenant)
             let localVariableRequestBuilder: RequestBuilder<UserDevice>.Type = SafehealthAPI.requestBuilderFactory.getBuilder()
             let URLString = localVariableUrlComponents?.string ?? localVariableURLString
             return localVariableRequestBuilder.init(method: "DELETE", URLString: URLString, parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
@@ -406,14 +406,14 @@ open class UserDeviceAPI {
      Deletes UserDevice entity by device token.
      - DELETE /device
      - API Key:
+       - type: apiKey Authorization 
+       - name: Identity Access Token
+     - API Key:
        - type: apiKey x-sf-account 
        - name: Safe Account
      - API Key:
        - type: apiKey x-sf-tenant 
        - name: Safe Tenant
-     - BASIC:
-       - type: http
-       - name: basic
      - parameter deviceToken: (query) Identifying token passed when creating UserDevice. (optional)
      - returns: RequestBuilder<UserDevice> 
      */
@@ -437,9 +437,9 @@ open class UserDeviceAPI {
         var localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
         do {
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: self.client.safe Account)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: self.client.safe Tenant)
-            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "", name: "", value: self.client.basic)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "Authorization", value: self.client.identityAccessToken)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-account", value: self.client.safeAccount)
+            try Authentication.setAuthenticationParameters(headers: &localVariableHeaderParameters, url: &localVariableUrlComponents, in: "header", name: "x-sf-tenant", value: self.client.safeTenant)
             let localVariableRequestBuilder: RequestBuilder<UserDevice>.Type = SafehealthAPI.requestBuilderFactory.getBuilder()
             let URLString = localVariableUrlComponents?.string ?? localVariableURLString
             return localVariableRequestBuilder.init(method: "DELETE", URLString: URLString, parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)

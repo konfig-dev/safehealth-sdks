@@ -794,10 +794,11 @@
       }
     },
     "securitySchemes": {
-      "basic": {
-        "type": "http",
-        "description": "Basic Authorization header using the Bearer scheme.",
-        "scheme": "basic"
+      "Identity Access Token": {
+        "type": "apiKey",
+        "description": "Identity-based authorization header using the Bearer scheme.",
+        "name": "Authorization",
+        "in": "header"
       },
       "Safe Account": {
         "type": "apiKey",
@@ -813,8 +814,12 @@
   },
   "security": [
     {
-      "basic": [],
-      "Safe Account": [],
+      "Identity Access Token": []
+    },
+    {
+      "Safe Account": []
+    },
+    {
       "Safe Tenant": []
     }
   ]

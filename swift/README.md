@@ -63,8 +63,9 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 import Safehealth
 
 let safehealth = SafehealthClient(
-    safe Account: "X_SF_ACCOUNT",
-    safe Tenant: "X_SF_TENANT",
+    identityAccessToken: "AUTHORIZATION",
+    safeAccount: "X_SF_ACCOUNT",
+    safeTenant: "X_SF_TENANT"
     // Defining the base path is optional and defaults to https://api.dev-1.sf.safecdx.io/v1beta/notification-push
     // basePath: "https://api.dev-1.sf.safecdx.io/v1beta/notification-push"
 )

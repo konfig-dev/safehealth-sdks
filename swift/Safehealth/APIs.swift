@@ -14,9 +14,9 @@ open class SafehealthAPI {
     public static var credential: URLCredential?
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
     public static var apiResponseQueue: DispatchQueue = .main
-    public static var safe Account: String?;
-    public static var safe Tenant: String?;
-    public static var basic: String?;
+    public static var identityAccessToken: String?;
+    public static var safeAccount: String?;
+    public static var safeTenant: String?;
 }
 
 open class RequestBuilder<T> {

@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Safe Account](../README.md#Safe Account), [Safe Tenant](../README.md#Safe Tenant), [basic](../README.md#basic)
+[Identity Access Token](../README.md#Identity Access Token), [Safe Account](../README.md#Safe Account), [Safe Tenant](../README.md#Safe Tenant)
 
 ### HTTP request headers
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Safe Account](../README.md#Safe Account), [Safe Tenant](../README.md#Safe Tenant), [basic](../README.md#basic)
+[Identity Access Token](../README.md#Identity Access Token), [Safe Account](../README.md#Safe Account), [Safe Tenant](../README.md#Safe Tenant)
 
 ### HTTP request headers
 
