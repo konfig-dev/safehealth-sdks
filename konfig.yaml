@@ -3,6 +3,10 @@
 outputDirectory: /tmp/safehealth-sdks-out
 specInputPath: openapi.json
 specPath: openapi-fixed.json
+readmeHeader:
+  image: header.png
+  title: Safe Health
+  url: https://www.safehealthsystems.com
 generators:
   swift:
     version: 1.0.0

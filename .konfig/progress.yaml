@@ -4,7 +4,7 @@ examples_3: {}
 operationIds:
   /device:
     delete: UserDevice_delete
-    post: UserDevice_createEntity
+    post: UserDevice_create
   /users/{userId}/devices:
     get: Device_list
     post: Device_store

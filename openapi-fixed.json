@@ -264,7 +264,7 @@
           "UserDevice"
         ],
         "summary": "Creates a UserDevice entity.",
-        "operationId": "UserDevice_createEntity",
+        "operationId": "UserDevice_create",
         "requestBody": {
           "description": "Represents a device used by the legacy push notification system.",
           "content": {
