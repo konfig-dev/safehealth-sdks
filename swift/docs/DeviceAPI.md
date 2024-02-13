@@ -18,7 +18,7 @@ Deletes the identified device from the specified user's devices.
 
 ### Example
 ```swift
-import Safehealth
+import SafehealthPush
 
 let userId = "userId_example" // String | Identifies the user to whom the device is associated.
 let deviceId = "deviceId_example" // String | Identifies the device to be deleted.
@@ -67,7 +67,7 @@ Retrieves a pageable list of devices associated with the specified user.
 
 ### Example
 ```swift
-import Safehealth
+import SafehealthPush
 
 let userId = "userId_example" // String | Identifies the user for whom to retrieve devices.
 let page = 987 // Int |  (optional)
@@ -118,7 +118,7 @@ Stores a new device associated with the specified user. If a device with any mat
 
 ### Example
 ```swift
-import Safehealth
+import SafehealthPush
 
 let userId = "userId_example" // String | Identifies the user to whom this device will be associated.
 let deviceCreateRequest = DeviceCreateRequest(device: Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))) // DeviceCreateRequest | Carries all device tokens and information required to deliver notifications to the device. (optional)

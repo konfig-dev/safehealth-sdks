@@ -1,4 +1,4 @@
-public class  SafehealthClient {
+public class  SafehealthPushClient {
     var identityAccessToken: String?;
     var safeAccount: String?;
     var safeTenant: String?;

@@ -8,7 +8,7 @@ Send push notifications to a user's device
 
 [Health Check UI](http://localhost:8012/healthchecks-ui)
 
-[![CocoaPods](https://img.shields.io/badge/pod-v1.0.0-blue)](https://cocoapods.org/pods/Safehealth)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.1.0-blue)](https://cocoapods.org/pods/SafehealthPush)
 
 </div>
 
@@ -20,11 +20,11 @@ Send push notifications to a user's device
   * [CocoaPods](#cocoapods)
 - [Getting Started](#getting-started)
 - [Reference](#reference)
-  * [`safehealth.device.delete`](#safehealthdevicedelete)
-  * [`safehealth.device.list`](#safehealthdevicelist)
-  * [`safehealth.device.store`](#safehealthdevicestore)
-  * [`safehealth.userDevice.create`](#safehealthuserdevicecreate)
-  * [`safehealth.userDevice.delete`](#safehealthuserdevicedelete)
+  * [`safehealthpush.device.delete`](#safehealthpushdevicedelete)
+  * [`safehealthpush.device.list`](#safehealthpushdevicelist)
+  * [`safehealthpush.device.store`](#safehealthpushdevicestore)
+  * [`safehealthpush.userDevice.create`](#safehealthpushuserdevicecreate)
+  * [`safehealthpush.userDevice.delete`](#safehealthpushuserdevicedelete)
 
 <!-- tocstop -->
 
@@ -33,7 +33,7 @@ Send push notifications to a user's device
 ### CocoaPods<a id="cocoapods"></a>
 
 1. Add `source 'https://github.com/CocoaPods/Specs.git'` to your `Podfile`
-2. Add `pod 'Safehealth', '~> 1.0.0'` to your `Podfile`
+2. Add `pod 'SafehealthPush', '~> 0.1.0'` to your `Podfile`
 
 Your `Podfile` should look like:
 ```ruby
@@ -41,7 +41,7 @@ Your `Podfile` should look like:
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Example' do
-  pod 'Safehealth', '~> 1.0.0'
+  pod 'SafehealthPush', '~> 0.1.0'
 end
 ```
 3. Run `pod install`
@@ -50,7 +50,7 @@ end
 ❯ pod install
 Analyzing dependencies
 Downloading dependencies
-Installing Safehealth 1.0.0
+Installing SafehealthPush 0.1.0
 Generating Pods project
 Integrating client project
 Pod installation complete! There is 1 dependency from the Podfile and 2 total pods installed.
@@ -60,9 +60,9 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
 ```swift
 
-import Safehealth
+import SafehealthPush
 
-let safehealth = SafehealthClient(
+let safehealthpush = SafehealthPushClient(
     identityAccessToken: "AUTHORIZATION",
     safeAccount: "X_SF_ACCOUNT",
     safeTenant: "X_SF_TENANT"
@@ -72,7 +72,7 @@ let safehealth = SafehealthClient(
 
 let userId = "userId_example"
 let deviceId = "deviceId_example"
-let deleteResponse = safehealth.delete(
+let deleteResponse = safehealthpush.delete(
     userId: userId,
     deviceId: deviceId
 )
@@ -82,7 +82,7 @@ let deleteResponse = safehealth.delete(
 ## Reference<a id="reference"></a>
 
 
-### `safehealth.device.delete`<a id="safehealthdevicedelete"></a>
+### `safehealthpush.device.delete`<a id="safehealthpushdevicedelete"></a>
 
 Deletes the identified device from the specified user&#39;s devices.
 
@@ -91,7 +91,7 @@ Deletes the identified device from the specified user&#39;s devices.
 ```swift
 let userId = "userId_example"
 let deviceId = "deviceId_example"
-let deleteResponse = safehealth.delete(
+let deleteResponse = safehealthpush.delete(
     userId: userId,
     deviceId: deviceId
 )
@@ -118,7 +118,7 @@ Identifies the device to be deleted.
 ---
 
 
-### `safehealth.device.list`<a id="safehealthdevicelist"></a>
+### `safehealthpush.device.list`<a id="safehealthpushdevicelist"></a>
 
 Retrieves a pageable list of devices associated with the specified user.
 
@@ -128,7 +128,7 @@ Retrieves a pageable list of devices associated with the specified user.
 let userId = "userId_example"
 let page = 987
 let limit = 987
-let listResponse = safehealth.list(
+let listResponse = safehealthpush.list(
     userId: userId,
     page: page,
     limit: limit
@@ -150,7 +150,7 @@ Identifies the user for whom to retrieve devices.
 
 #### 🔄 Return<a id="🔄-return"></a>
 
-[DeviceListResponse](./Safehealth/Models/DeviceListResponse.swift)
+[DeviceListResponse](./SafehealthPush/Models/DeviceListResponse.swift)
 
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
@@ -161,7 +161,7 @@ Identifies the user for whom to retrieve devices.
 ---
 
 
-### `safehealth.device.store`<a id="safehealthdevicestore"></a>
+### `safehealthpush.device.store`<a id="safehealthpushdevicestore"></a>
 
 Stores a new device associated with the specified user. If a device with any matching token(s) already exists for that user, it will be removed.
 
@@ -170,7 +170,7 @@ Stores a new device associated with the specified user. If a device with any mat
 ```swift
 let userId = "userId_example"
 let device = Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))
-let storeResponse = safehealth.store(
+let storeResponse = safehealthpush.store(
     userId: userId,
     device: device
 )
@@ -188,7 +188,7 @@ Identifies the user to whom this device will be associated.
 
 #### 🔄 Return<a id="🔄-return"></a>
 
-[DeviceCreateResponse](./Safehealth/Models/DeviceCreateResponse.swift)
+[DeviceCreateResponse](./SafehealthPush/Models/DeviceCreateResponse.swift)
 
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
@@ -199,7 +199,7 @@ Identifies the user to whom this device will be associated.
 ---
 
 
-### `safehealth.userDevice.create`<a id="safehealthuserdevicecreate"></a>
+### `safehealthpush.userDevice.create`<a id="safehealthpushuserdevicecreate"></a>
 
 Creates a UserDevice entity.
 
@@ -223,7 +223,7 @@ let tenantId = "tenantId_example"
 let userUUID = "userUUID_example"
 let nationalHealthId = "nationalHealthId_example"
 let language = "language_example"
-let createResponse = safehealth.create(
+let createResponse = safehealthpush.create(
     id: id,
     createdAt: createdAt,
     updatedAt: updatedAt,
@@ -299,7 +299,7 @@ let createResponse = safehealth.create(
 
 #### 🔄 Return<a id="🔄-return"></a>
 
-[UserDevice](./Safehealth/Models/UserDevice.swift)
+[UserDevice](./SafehealthPush/Models/UserDevice.swift)
 
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
@@ -310,7 +310,7 @@ let createResponse = safehealth.create(
 ---
 
 
-### `safehealth.userDevice.delete`<a id="safehealthuserdevicedelete"></a>
+### `safehealthpush.userDevice.delete`<a id="safehealthpushuserdevicedelete"></a>
 
 Deletes UserDevice entity by device token.
 
@@ -318,7 +318,7 @@ Deletes UserDevice entity by device token.
 
 ```swift
 let deviceToken = "deviceToken_example"
-let deleteResponse = safehealth.delete(
+let deleteResponse = safehealthpush.delete(
     deviceToken: deviceToken
 )
 ```
@@ -332,7 +332,7 @@ Identifying token passed when creating UserDevice.
 
 #### 🔄 Return<a id="🔄-return"></a>
 
-[UserDevice](./Safehealth/Models/UserDevice.swift)
+[UserDevice](./SafehealthPush/Models/UserDevice.swift)
 
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 

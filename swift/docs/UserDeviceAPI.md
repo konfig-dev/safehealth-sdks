@@ -17,7 +17,7 @@ Creates a UserDevice entity.
 
 ### Example
 ```swift
-import Safehealth
+import SafehealthPush
 
 let userDevice = UserDevice(id: "id_example", createdAt: Date(), updatedAt: Date(), deviceId: "deviceId_example", appVersion: "appVersion_example", deviceModel: "deviceModel_example", deviceToken: "deviceToken_example", deviceType: "deviceType_example", idfaId: "idfaId_example", isLoggedIn: false, osVersion: "osVersion_example", voipToken: "voipToken_example", userId: "userId_example", tenantId: "tenantId_example", userUUID: "userUUID_example", nationalHealthId: "nationalHealthId_example", language: "language_example") // UserDevice | Represents a device used by the legacy push notification system. (optional)
 
@@ -64,7 +64,7 @@ Deletes UserDevice entity by device token.
 
 ### Example
 ```swift
-import Safehealth
+import SafehealthPush
 
 let deviceToken = "deviceToken_example" // String | Identifying token passed when creating UserDevice. (optional)
 
