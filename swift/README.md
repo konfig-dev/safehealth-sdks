@@ -232,7 +232,7 @@ let storeResponse = try await safehealthpush.device.store(
 Identifies the user to whom this device will be associated.
 
 
-##### device: `Device`<a id="device-device"></a>
+##### device: [`Device`](./SafehealthPush/Models/Device.swift)<a id="device-devicesafehealthpushmodelsdeviceswift"></a>
 
 
 #### 🔄 Return<a id="🔄-return"></a>
