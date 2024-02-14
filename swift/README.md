@@ -59,7 +59,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 ## Getting Started<a id="getting-started"></a>
 
 ```swift
-
 import SafehealthPush
 
 let safehealthpush = SafehealthPushClient(
@@ -76,7 +75,6 @@ let deleteResponse = try await safehealthpush.device.delete(
     userId: userId,
     deviceId: deviceId
 )
-
 ```
 
 ## Reference<a id="reference"></a>
