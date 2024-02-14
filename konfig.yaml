@@ -26,4 +26,4 @@ generators:
     outputDirectory: swift
     git:
       userId: konfig-dev
-      repoId: safehealth-sdks/tree/main/swift
+      repoId: safehealth-push-swift-sdk
