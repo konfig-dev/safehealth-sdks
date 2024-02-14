@@ -83,13 +83,13 @@ class SimpleTest: XCTestCase {
     func testDeviceStore() async throws {
         let userId = UUID().uuidString
         let device = Device(
-            id: UUID().uuidString,
+            id: "id_example",
             createdAt: Date(),
             updatedAt: Date(),
-            platform: Platform.mobile,
+            platform: Platform.unknown,
             web: Web(
-                operatingSystem: OperatingSystem.android,
-                browserName: BrowserName.chrome,
+                operatingSystem: OperatingSystem.unknown,
+                browserName: BrowserName.unknown,
                 hostname: "hostname_example",
                 defaults: WebPushDefaults(
                     channels: WebChannels(
@@ -102,7 +102,7 @@ class SimpleTest: XCTestCase {
                 )
             ),
             mobile: Mobile(
-                os: MobileOperatingSystem.android,
+                os: MobileOperatingSystem.appleIos,
                 ios: AppleIos(
                     bundleId: "bundleId_example",
                     teamId: "teamId_example",

@@ -169,7 +169,56 @@ Stores a new device associated with the specified user. If a device with any mat
 
 ```swift
 let userId = UUID().uuidString
-let device = Device(id: "id_example", createdAt: Date(), updatedAt: Date(), platform: Platform(), web: Web(operatingSystem: OperatingSystem(), browserName: BrowserName(), hostname: "hostname_example", defaults: WebPushDefaults(channels: WebChannels(firebaseCloudMessaging: WebFirebaseCloudMessaging(projectId: "projectId_example", appId: "appId_example", token: "token_example")))), mobile: Mobile(os: MobileOperatingSystem(), ios: AppleIos(bundleId: "bundleId_example", teamId: "teamId_example", signingCertificateType: SigningCertificate(), channels: AppleIosChannels(simpleNotificationService: AppleSimpleNotificationService(apnsVoip: ApplePushNotificationServiceVoIp(applicationArn: "applicationArn_example", token: "token_example")), firebaseCloudMessaging: AppleFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example"))), android: Android(channels: AndroidChannels(firebaseCloudMessaging: AndroidFirebaseCloudMessaging(projectId: "projectId_example", applicationId: "applicationId_example", token: "token_example")))))
+let device = Device(
+    id: "id_example",
+    createdAt: Date(),
+    updatedAt: Date(),
+    platform: Platform.unknown,
+    web: Web(
+        operatingSystem: OperatingSystem.unknown,
+        browserName: BrowserName.unknown,
+        hostname: "hostname_example",
+        defaults: WebPushDefaults(
+            channels: WebChannels(
+                firebaseCloudMessaging: WebFirebaseCloudMessaging(
+                    projectId: "projectId_example",
+                    appId: "appId_example",
+                    token: "token_example"
+                )
+            )
+        )
+    ),
+    mobile: Mobile(
+        os: MobileOperatingSystem.appleIos,
+        ios: AppleIos(
+            bundleId: "bundleId_example",
+            teamId: "teamId_example",
+            signingCertificateType: SigningCertificate.development,
+            channels: AppleIosChannels(
+                simpleNotificationService: AppleSimpleNotificationService(
+                    apnsVoip: ApplePushNotificationServiceVoIp(
+                        applicationArn: "applicationArn_example",
+                        token: "token_example"
+                    )
+                ),
+                firebaseCloudMessaging: AppleFirebaseCloudMessaging(
+                    projectId: "projectId_example",
+                    applicationId: "applicationId_example",
+                    token: "token_example"
+                )
+            )
+        ),
+        android: Android(
+            channels: AndroidChannels(
+                firebaseCloudMessaging: AndroidFirebaseCloudMessaging(
+                    projectId: "projectId_example",
+                    applicationId: "applicationId_example",
+                    token: "token_example"
+                )
+            )
+        )
+    )
+)
 let storeResponse = try await safehealthpush.device.store(
     userId: userId,
     device: device
