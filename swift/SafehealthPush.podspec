@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.version = '0.1.0'
   s.source = { :git => 'https://github.com/konfig-dev/safehealth-sdks.git', :tag => 'v0.1.0-swift' }
   s.authors = 'safehealth.me'
-  s.license = 'MIT'
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage = 'https://github.com/konfig-dev/safehealth-sdks/tree/main/swift'
   s.summary = 'SafehealthPush Swift SDK'
   s.source_files = 'swift/SafehealthPush/**/*.swift'
