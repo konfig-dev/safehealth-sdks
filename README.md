@@ -2,4 +2,4 @@
 
 |Language|Version|Package Manager|README|Source|
 |-|-|-|-|-|
-|Swift|0.1.3|[CocoaPods](https://cocoapods.org/pods/SafehealthPush)|[README](https://github.com/konfig-dev/safehealth-push-swift-sdk#readme)|[Source](https://github.com/konfig-dev/safehealth-push-swift-sdk)|
+|Swift|0.1.4|[CocoaPods](https://cocoapods.org/pods/SafehealthPush)|[README](https://github.com/konfig-dev/safehealth-push-swift-sdk#readme)|[Source](https://github.com/konfig-dev/safehealth-push-swift-sdk)|
