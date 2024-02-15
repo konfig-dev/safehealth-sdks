@@ -21,7 +21,7 @@ generators:
     useSecurityKeyNameAsPropertyName: true
   swift:
     version: 0.1.5
-    projectName: SafeHealthPush
+    projectName: SafehealthPush
     podAuthors: safehealth.me
     outputDirectory: swift
     git:
