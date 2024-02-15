@@ -15,13 +15,13 @@ generators:
     git:
       userId: konfig-dev
       repoId: safehealth-sdks/tree/main/typescript
-    clientName: SafehealthPush
+    clientName: SafeHealthPush
     npmName: safehealth-push-typescript-sdk
     removeDefaultConfigurationParameters: true
     useSecurityKeyNameAsPropertyName: true
   swift:
     version: 0.1.4
-    projectName: SafehealthPush
+    projectName: SafeHealthPush
     podAuthors: safehealth.me
     outputDirectory: swift
     git:
