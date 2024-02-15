@@ -2,5 +2,5 @@
 
 | SDK Name | Lines of Code |
 | -------- | ------------- |
-| swift | 7548 |
-| **Total** | 7548 |
+| swift | 7568 |
+| **Total** | 7568 |
