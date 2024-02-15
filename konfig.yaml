@@ -20,7 +20,7 @@ generators:
     removeDefaultConfigurationParameters: true
     useSecurityKeyNameAsPropertyName: true
   swift:
-    version: 0.1.4
+    version: 0.1.0
     projectName: SafeHealthPush
     podAuthors: safehealth.me
     outputDirectory: swift
